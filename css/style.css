@@ -1,0 +1,8 @@
+.header {
+    display: flex;
+    justify-content: center;
+    height: 904px;
+    width: 2137px;
+    padding: relative;
+    background-image: url(../images/header.jpg);
+}
