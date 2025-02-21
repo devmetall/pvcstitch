@@ -1,8 +1,235 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap");
+
+/* 1. Use a more-intuitive box-sizing model */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* 2. Remove default margin */
+* {
+  margin: 0;
+}
+
+body {
+  /* 3. Add accessible line-height */
+  line-height: 1.5;
+  /* 4. Improve text rendering */
+  -webkit-font-smoothing: antialiased;
+  display: flex;
+  justify-content: center;
+}
+
+/* 5. Improve media defaults */
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+/* 6. Inherit fonts for form controls */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* 7. Avoid text overflows */
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+/* 8. Improve line wrapping */
+p {
+  text-wrap: pretty;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  text-wrap: balance;
+}
+
+/*
+    9. Create a root stacking context
+  */
+#root,
+#__next {
+  isolation: isolate;
+}
+
+.container {
+  width: 1240px;
+  padding: relative;
+}
+
 .header {
-    display: flex;
-    justify-content: center;
-    height: 904px;
-    width: 2137px;
-    padding: relative;
-    background-image: url(../images/header.jpg);
+  height: 904px;
+  width: 2137px;
+  position: relative;
+
+  background-image: url(../images/header-background.jpg);
+  background-image: -webkit-image-set(
+    url(../images/header-background.jpg) 1x,
+    url(../images/header-background@2x.jpg) 2x
+  );
+
+  background-image: image-set(
+    url(../images/header-background.jpg) 1x,
+    url(../images/header-background@2x.jpg) 2x
+  );
+
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.layer-1 {
+  position: absolute;
+  background-image: url(../images/header-left-sky.png);
+  background-image: -webkit-image-set(
+    url(../images/header-left-sky.png) 1x,
+    url(../images/header-left-sky@2x.png) 2x
+  );
+  background-image: image-set(
+    url(../images/header-left-sky.png) 1x,
+    url(../images/header-left-sky@2x.png) 2x
+  );
+  background-repeat: no-repeat;
+  top: 0;
+  left: 0;
+  width: 540px;
+  height: 522px;
+  z-index: 2;
+}
+
+.layer-2 {
+  position: absolute;
+  background-image: url(../images/header-left-blue-sky.png);
+  background-image: -webkit-image-set(
+    url(../images/header-left-blue-sky.png) 1x,
+    url(../images/header-left-blue-sky@2x.png) 2x
+  );
+  background-image: image-set(
+    url(../images/header-left-blue-sky.png) 1x,
+    url(../images/header-left-blue-sky@2x.png) 2x
+  );
+  background-repeat: no-repeat;
+  top: 0;
+  left: 0;
+  width: 687px;
+  height: 659px;
+  z-index: 1;
+}
+
+.layer-3 {
+  position: absolute;
+  background-image: url(../images/header-left-small-cloud.png);
+  background-image: -webkit-image-set(
+    url(../images/header-left-small-cloud.png) 1x,
+    url(../images/header-left-small-cloud@2x.png) 2x
+  );
+  background-image: image-set(
+    url(../images/header-left-small-cloud.png) 1x,
+    url(../images/header-left-small-cloud@2x.png) 2x
+  );
+  background-repeat: no-repeat;
+  top: 373px;
+  left: 141px;
+  width: 100%;
+  height: 100%;
+  z-index: 3;
+}
+
+.layer-4 {
+  position: absolute;
+  background-image: url(../images/header-left-blue-cloud.png);
+  background-image: -webkit-image-set(
+    url(../images/header-left-blue-cloud.png) 1x,
+    url(../images/header-left-blue-cloud@2x.png) 2x
+  );
+  background-image: image-set(
+    url(../images/header-left-blue-cloud.png) 1x,
+    url(../images/header-left-blue-cloud@2x.png) 2x
+  );
+  background-repeat: no-repeat;
+  top: 273px;
+  left: 53px;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+}
+
+.header__logo-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  margin-top: 52px;
+}
+
+.header__logo {
+  width: 106px;
+  height: 66px;
+  z-index: 100;
+}
+
+.header__text {
+  margin-left: 48px;
+  color: white;
+  font-family: "Inter", sans-serif;
+  font-weight: 200;
+  font-size: 24px;
+  line-height: 29.05px;
+  letter-spacing: 0%;
+  text-transform: uppercase;
+  z-index: 100;
+}
+
+.header__button {
+  margin-left: 481px;
+  background-color: rgba(247, 180, 60, 1);
+  color: white;
+  width: 240px;
+  height: 53px;
+  border-radius: 37px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  padding: 0;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.header__button:hover {
+  transform: scale(1.05); 
+}
+
+.header__button p {
+  font-family: "Inter", sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 19.36px;
+  letter-spacing: 2%;
+  text-align: center;
+  padding: 0;
+}
+
+.header__phone-icon {
+  width: 30px;
+  height: 30px;
 }
